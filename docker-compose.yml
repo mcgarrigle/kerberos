@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  kdc:
+    hostname: kdc.local
+    image: centos/systemd
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./root:/root
+    networks:
+      - lan
+    #command: 'sleep infinity'
+  server1:
+    hostname: server1.local
+    image: centos/systemd
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - ./root:/root
+    networks:
+      - lan
+    #command: 'sleep infinity'
+
+networks:
+  lan:
