@@ -227,3 +227,51 @@ kinit kadmin
 kinit root
 kinit root/admin
 klist
+bash install.sh 
+kdb5_util create -r MAC.WALES -s
+kadmin.local
+ystemctl enable --now krb5kdc
+systemctl enable --now krb5kdc
+systemctl enable --now kadmin
+systemctl status krb5kdc
+systemctl status kadmin
+ss -tnlp
+kinit root
+kinit root/admin
+kinit root/admin
+klist
+vi install.sh 
+yum install krb5-workstation krb5-libs
+cp krb5.conf /etc/krb5.conf
+kinit root/admin
+kinit root/admin
+klist
+kadmin
+kadmin
+kadmin
+ktutil 
+kadmin 
+ktutil 
+history 
+mv install.sh kdc-install.sh
+vi client-install.sh
+i  244  yum install krb5-workstation krb5-libs
+vi client-install.sh
+env vi client-install.sh
+kadmin -q 'addprinc -randkey host/server2.local'
+env vi client-install.sh
+hostname -f
+env vi client-install.sh
+kadmin -q "addprinc -randkey host/$(hostname -f)"
+env vi client-install.sh
+cat client-install.sh 
+ktutil kadmin -q "addprinc -randkey host/$(hostname -f)"
+kadmin -q "addprinc -randkey host/$(hostname -f)"
+kadmin 
+klist
+kdestroy 
+klist
+kinit pete
+klist
+list
+klist

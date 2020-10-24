@@ -25,44 +25,45 @@
 ""1	LINE	0
 	
 "2	LINE	0
-	# systemctl start krb5d
+	# kadmin.local -q "addprinc pete/admin"
 "3	LINE	0
+	# kadmin.local -q "addprinc root/admin"
+"4	LINE	0
+	# kdb5_util create -s
+"5	LINE	0
+	# kadmin.local:  addprinc user1
+"6	LINE	0
+	
+"7	LINE	0
+	# systemctl start krb5d
+"8	LINE	0
 	# [root@kdc ~]# kadmin.local
 	# kadmin.local:  addprinc root/admin
 	# kadmin.local:  addprinc user1
 	# kadmin.local:  ktadd -k /var/kerberos/krb5kdc/kadm5.keytab kadmin/admin
 	# kadmin.local:  ktadd -k /var/kerberos/krb5kdc/kadm5.keytab kadmin/changepw
 	# kadmin.local:  exit
-"4	LINE	0
-	# kadmin.local
-"5	LINE	0
-	cat install.sh
-"6	LINE	0
-	      kdc = kerberos-1.mit.edu
-"7	LINE	0
-	
-"8	LINE	0
-	kadmin.local -q "listprincs"
 "9	LINE	0
-	# kadmin.local -q "addprinc pete/admin"
+	# kadmin.local
 "-	CHAR	0
 	start
 
 # File marks:
-'0  11  0  ~/install.sh
-'1  24  22  ~/install.sh
-'2  2  54  ~/install.sh
-'3  8  8  /etc/krb5.conf
-'4  26  0  /var/kerberos/krb5kdc/kdc.conf
-'5  9  0  /etc/krb5.conf
-'6  1  0  ~/install.sh
-'7  1  0  ~/kadm5.acl
-'8  14  8  ~/kdc.conf
-'9  9  0  ~/install.sh
+'0  21  0  ~/install.sh
+'1  8  0  ~/install.sh
+'2  19  22  ~/install.sh
+'3  2  54  ~/install.sh
+'4  8  8  /etc/krb5.conf
+'5  26  0  /var/kerberos/krb5kdc/kdc.conf
+'6  9  0  /etc/krb5.conf
+'7  1  0  ~/install.sh
+'8  1  0  ~/kadm5.acl
+'9  14  8  ~/kdc.conf
 
 # Jumplist (newest first):
--'  11  0  ~/install.sh
--'  24  0  ~/install.sh
+-'  21  0  ~/install.sh
+-'  8  0  ~/install.sh
+-'  19  0  ~/install.sh
 -'  2  0  ~/install.sh
 -'  8  8  /etc/krb5.conf
 -'  26  0  /var/kerberos/krb5kdc/kdc.conf
@@ -70,7 +71,6 @@
 -'  9  4  /etc/krb5.conf
 -'  1  0  /etc/krb5.conf
 -'  1  0  ~/install.sh
--'  9  0  ~/install.sh
 -'  1  0  ~/kadm5.acl
 -'  14  8  ~/kdc.conf
 -'  4  0  ~/install.sh
@@ -153,7 +153,6 @@
 -'  8  8  /etc/krb5.conf
 -'  26  0  /var/kerberos/krb5kdc/kdc.conf
 -'  6  0  /var/kerberos/krb5kdc/kdc.conf
--'  12  0  ~/install.sh
 -'  8  8  /etc/krb5.conf
 -'  26  0  /var/kerberos/krb5kdc/kdc.conf
 -'  6  0  /var/kerberos/krb5kdc/kdc.conf
@@ -162,9 +161,9 @@
 # History of marks within files (newest to oldest):
 
 > ~/install.sh
-	"	11	0
-	^	23	20
-	.	11	0
+	"	21	0
+	^	18	20
+	.	8	0
 	+	2	18
 	+	3	0
 	+	4	26
@@ -173,46 +172,48 @@
 	+	4	20
 	+	8	1
 	+	6	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	1
-	+	9	0
-	+	10	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	1
+	+	8	0
+	+	8	0
 	+	6	0
-	+	26	1
-	+	11	19
-	+	11	1
-	+	11	0
-	+	11	0
-	+	11	0
-	+	11	0
-	+	11	0
+	+	21	1
+	+	8	19
+	+	8	1
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
+	+	8	0
 	+	2	54
-	+	24	29
-	+	14	0
-	+	16	0
-	+	16	0
-	+	16	0
-	+	23	0
-	+	24	0
-	+	16	0
+	+	19	29
+	+	10	0
 	+	12	0
-	+	14	1
-	+	16	0
-	+	16	0
-	+	23	0
-	+	24	0
-	+	25	0
-	+	16	0
+	+	12	0
+	+	12	0
+	+	18	0
+	+	19	0
+	+	12	0
+	+	8	0
+	+	10	1
+	+	12	0
+	+	12	0
+	+	18	0
+	+	19	0
+	+	20	0
+	+	12	0
+	+	8	0
+	+	12	0
 	+	11	0
-	+	16	0
-	+	15	0
-	+	22	0
-	+	23	22
-	+	24	19
-	+	23	19
-	+	11	0
+	+	17	0
+	+	18	22
+	+	19	19
+	+	18	19
+	+	8	0
+	+	14	0
+	+	8	0
 
 > /etc/krb5.conf
 	"	8	8
