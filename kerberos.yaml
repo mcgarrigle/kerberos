@@ -1,0 +1,48 @@
+---
+- hosts: all
+  tasks:
+  - name: hostname
+    hostname:
+      name: "{{ inventory_hostname }}"
+  - name: DHCP hostname
+    lineinfile:
+      path: /etc/sysconfig/network-scripts/ifcfg-eth0
+      regexp: "^DHCP_HOST"
+      line: "DHCP_HOST={{ inventory_hostname }}"
+    notify:
+    - restart network
+  - name: repos
+    yum:
+      name: 
+      - epel-release
+  - name: packages
+    yum:
+      name: 
+      - vim
+      - krb5-workstation
+      state: present
+  - name: krb5.conf
+    copy:
+      src: ./root/krb5.conf
+      dest: /etc/krb5.conf
+  handlers:
+    - name: restart network
+      service:
+        name: network
+        state: restarted
+- hosts: kdc.local
+  tasks:
+  - name: packages
+    yum:
+      name: 
+      - krb5-server
+      - iproute
+      state: present
+  - name: kdc.conf
+    copy:
+      src: ./root/kdc.conf
+      dest: /var/kerberos/krb5kdc/kdc.conf
+  - name: kadm5.acl
+    copy:
+      src: ./root/kadm5.acl
+      dest: /var/kerberos/krb5kdc/kadm5.acl

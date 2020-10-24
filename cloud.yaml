@@ -1,0 +1,23 @@
+version: '1'
+
+project: krb5
+
+guests:
+  kdc:
+    hostname: kdc.local
+    image: cloud7
+    cores: 1
+    memory: 2048
+    disks:
+      vda: 10G
+    interfaces:
+      eth0: 'network=default'
+  server1:
+    hostname: server1.local
+    image: cloud7
+    cores: 1
+    memory: 2048
+    disks:
+      vda: 10G
+    interfaces:
+      eth0: 'network=default'
