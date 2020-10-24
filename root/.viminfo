@@ -22,144 +22,149 @@
 # Input Line History (newest to oldest):
 
 # Registers:
-"1	LINE	0
-	# Configuration snippets may be placed in this directory as well
-	includedir /etc/krb5.conf.d/
+""1	LINE	0
 	
-	[logging]
-	  default = FILE:/var/log/krb5libs.log
-	  kdc = FILE:/var/log/krb5kdc.log
-	  admin_server = FILE:/var/log/kadmind.log
-	
-	[libdefaults]
-	  dns_lookup_realm = false
-	  ticket_lifetime = 24h
-	  renew_lifetime = 7d
-	  forwardable = true
-	  rdns = false
-	  pkinit_anchors = FILE:/etc/pki/tls/certs/ca-bundle.crt
-	  # default_realm = EXAMPLE.COM
-	  default_ccache_name = KEYRING:persistent:%{uid}
-	
-	[realms]
-	# EXAMPLE.COM = {
-	#  kdc = kerberos.example.com
-	#  admin_server = kerberos.example.com
-	# }
-	
-	[domain_realm]
-	# .example.com = EXAMPLE.COM
-	# example.com = EXAMPLE.COM
 "2	LINE	0
-	*/admin@EXAMPLE.COM	*
-""-	CHAR	0
-	t
+	# systemctl start krb5d
+"3	LINE	0
+	# [root@kdc ~]# kadmin.local
+	# kadmin.local:  addprinc root/admin
+	# kadmin.local:  addprinc user1
+	# kadmin.local:  ktadd -k /var/kerberos/krb5kdc/kadm5.keytab kadmin/admin
+	# kadmin.local:  ktadd -k /var/kerberos/krb5kdc/kadm5.keytab kadmin/changepw
+	# kadmin.local:  exit
+"4	LINE	0
+	# kadmin.local
+"5	LINE	0
+	cat install.sh
+"6	LINE	0
+	      kdc = kerberos-1.mit.edu
+"7	LINE	0
+	
+"8	LINE	0
+	kadmin.local -q "listprincs"
+"9	LINE	0
+	# kadmin.local -q "addprinc pete/admin"
+"-	CHAR	0
+	start
 
 # File marks:
-'0  9  0  ~/install.sh
-'1  6  0  /var/kerberos/krb5kdc/kdc.conf
-'2  1  0  /etc/krb5.conf
-'3  4  20  ~/install.sh
-'4  9  1  ~/krb5.conf
-'5  16  2  /etc/krb5.conf
-'6  14  68  ~/kdc.conf
-'7  1  22  /var/kerberos/krb5kdc/kadm5.acl
-'8  6  0  ~/install.sh
+'0  11  0  ~/install.sh
+'1  24  22  ~/install.sh
+'2  2  54  ~/install.sh
+'3  8  8  /etc/krb5.conf
+'4  26  0  /var/kerberos/krb5kdc/kdc.conf
+'5  9  0  /etc/krb5.conf
+'6  1  0  ~/install.sh
+'7  1  0  ~/kadm5.acl
+'8  14  8  ~/kdc.conf
+'9  9  0  ~/install.sh
 
 # Jumplist (newest first):
--'  9  0  ~/install.sh
--'  4  0  ~/install.sh
+-'  11  0  ~/install.sh
+-'  24  0  ~/install.sh
+-'  2  0  ~/install.sh
+-'  8  8  /etc/krb5.conf
+-'  26  0  /var/kerberos/krb5kdc/kdc.conf
 -'  6  0  /var/kerberos/krb5kdc/kdc.conf
--'  1  0  /var/kerberos/krb5kdc/kdc.conf
+-'  9  4  /etc/krb5.conf
 -'  1  0  /etc/krb5.conf
--'  16  1  /etc/krb5.conf
+-'  1  0  ~/install.sh
+-'  9  0  ~/install.sh
+-'  1  0  ~/kadm5.acl
+-'  14  8  ~/kdc.conf
+-'  4  0  ~/install.sh
+-'  1  0  /var/kerberos/krb5kdc/kdc.conf
+-'  15  1  /etc/krb5.conf
 -'  6  0  ~/install.sh
 -'  9  1  ~/krb5.conf
 -'  27  1  ~/krb5.conf
 -'  1  214  ~/krb5.conf
--'  14  68  ~/kdc.conf
--'  1  0  ~/kdc.conf
--'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  1  0  ~/install.sh
--'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  14  68  ~/kdc.conf
 -'  1  0  ~/kdc.conf
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  14  68  ~/kdc.conf
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  9  1  ~/krb5.conf
 -'  27  1  ~/krb5.conf
 -'  1  214  ~/krb5.conf
--'  14  68  ~/kdc.conf
--'  1  0  ~/kdc.conf
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  14  68  ~/kdc.conf
--'  1  0  ~/kdc.conf
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  14  68  ~/kdc.conf
--'  1  0  /etc/krb5.conf
--'  16  1  /etc/krb5.conf
 -'  9  1  ~/krb5.conf
 -'  27  1  ~/krb5.conf
 -'  1  214  ~/krb5.conf
--'  14  68  ~/kdc.conf
--'  1  0  ~/kdc.conf
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  14  68  ~/kdc.conf
--'  1  0  ~/kdc.conf
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  14  68  ~/kdc.conf
 -'  9  1  ~/krb5.conf
 -'  27  1  ~/krb5.conf
 -'  1  214  ~/krb5.conf
--'  14  68  ~/kdc.conf
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  9  1  ~/krb5.conf
+-'  27  1  ~/krb5.conf
+-'  1  214  ~/krb5.conf
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  9  1  ~/krb5.conf
+-'  27  1  ~/krb5.conf
+-'  1  214  ~/krb5.conf
+-'  14  8  ~/kdc.conf
+-'  9  1  ~/krb5.conf
+-'  27  1  ~/krb5.conf
+-'  1  214  ~/krb5.conf
 -'  1  0  ~/kdc.conf
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  14  68  ~/kdc.conf
--'  1  0  ~/kdc.conf
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
 -'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  14  68  ~/kdc.conf
+-'  9  1  ~/krb5.conf
+-'  1  0  ~/kadm5.acl
+-'  1  0  ~/kadm5.acl
+-'  14  8  ~/kdc.conf
+-'  10  0  /etc/krb5.conf
+-'  1  0  ~/kadm5.acl
+-'  14  8  ~/kdc.conf
+-'  26  0  /var/kerberos/krb5kdc/kdc.conf
 -'  6  0  /var/kerberos/krb5kdc/kdc.conf
--'  1  0  /var/kerberos/krb5kdc/kdc.conf
--'  1  0  /etc/krb5.conf
--'  16  1  /etc/krb5.conf
--'  9  1  ~/krb5.conf
--'  27  1  ~/krb5.conf
--'  1  214  ~/krb5.conf
--'  14  68  ~/kdc.conf
--'  1  0  ~/kdc.conf
--'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  1  22  /var/kerberos/krb5kdc/kadm5.acl
--'  14  68  ~/kdc.conf
--'  1  0  ~/kdc.conf
--'  1  22  /var/kerberos/krb5kdc/kadm5.acl
+-'  8  8  /etc/krb5.conf
+-'  26  0  /var/kerberos/krb5kdc/kdc.conf
+-'  6  0  /var/kerberos/krb5kdc/kdc.conf
+-'  12  0  ~/install.sh
+-'  8  8  /etc/krb5.conf
+-'  26  0  /var/kerberos/krb5kdc/kdc.conf
+-'  6  0  /var/kerberos/krb5kdc/kdc.conf
+-'  9  4  /etc/krb5.conf
 
 # History of marks within files (newest to oldest):
 
 > ~/install.sh
-	"	9	0
-	^	8	2
-	.	8	1
+	"	11	0
+	^	23	20
+	.	11	0
 	+	2	18
 	+	3	0
 	+	4	26
@@ -167,25 +172,81 @@
 	+	5	11
 	+	4	20
 	+	8	1
-
-> /var/kerberos/krb5kdc/kdc.conf
-	"	6	0
+	+	6	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	1
+	+	9	0
+	+	10	0
+	+	6	0
+	+	26	1
+	+	11	19
+	+	11	1
+	+	11	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	11	0
+	+	2	54
+	+	24	29
+	+	14	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	23	0
+	+	24	0
+	+	16	0
+	+	12	0
+	+	14	1
+	+	16	0
+	+	16	0
+	+	23	0
+	+	24	0
+	+	25	0
+	+	16	0
+	+	11	0
+	+	16	0
+	+	15	0
+	+	22	0
+	+	23	22
+	+	24	19
+	+	23	19
+	+	11	0
 
 > /etc/krb5.conf
-	"	1	0
-	^	16	2
-	.	16	1
+	"	8	8
+	^	8	26
+	.	8	23
 	+	5	0
 	+	6	0
 	+	7	0
+	+	9	0
 	+	10	0
 	+	11	0
 	+	12	0
 	+	13	0
 	+	14	0
+	+	16	0
+	+	15	1
+	+	8	0
+	+	7	16
+	+	8	23
+
+> /var/kerberos/krb5kdc/kdc.conf
+	"	26	0
+
+> ~/kadm5.acl
+	"	1	0
+	^	1	24
+	.	1	0
+	+	1	0
+
+> ~/kdc.conf
+	"	14	8
+	.	14	80
 	+	15	0
-	+	17	0
-	+	16	1
+	+	14	80
 
 > ~/krb5.conf
 	"	9	1
@@ -195,12 +256,6 @@
 	+	1	20
 	+	30	0
 	+	1	2
-
-> ~/kdc.conf
-	"	14	68
-	.	14	80
-	+	15	0
-	+	14	80
 
 > /var/kerberos/krb5kdc/kadm5.acl
 	"	1	22
